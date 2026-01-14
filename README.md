@@ -17,7 +17,6 @@ A responsive food ordering web application inspired by the flavors of Bikini Bot
 
 ## 📸 Preview
 
-_Main Screen:_
 ![App Preview](./images/prev.jpg)
 
 ## 📦 How to Run
