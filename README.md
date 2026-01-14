@@ -1,19 +1,28 @@
-# Getting Started
-Install the dependencies and run the project
-```
-npm install
-npm start
-```
+# 🍔 JS Sea Burgers - Food Ordering App
 
-Head over to https://vitejs.dev/ to learn more about configuring vite
-## About Scrimba
+A responsive food ordering web application inspired by the flavors of Bikini Bottom. Built as part of a JavaScript challenge to practice dynamic UI rendering and array methods.
 
-At Scrimba our goal is to create the best possible coding school at the cost of a gym membership! 💜
-If we succeed with this, it will give anyone who wants to become a software developer a realistic shot at succeeding, regardless of where they live and the size of their wallets 🎉
-The Fullstack Developer Path aims to teach you everything you need to become a Junior Developer, or you could take a deep-dive with one of our advanced courses 🚀
+## 🚀 Features
 
-- [Our courses](https://scrimba.com/courses)
-- [The Frontend Career Path](https://scrimba.com/fullstack-path-c0fullstack)
-- [Become a Scrimba Pro member](https://scrimba.com/pricing)
+- **Dynamic Menu Rendering**: Menu items are generated dynamically from a data array using the `.map()` method.
+- **Modern UI**: Clean, mobile-first design with a focus on usability.
+- **Responsive Layout**: Optimized for 600px width with custom-styled cards.
+- **Modular Code**: Organized with ES6 modules (`import`/`export`) for better maintainability.
 
-Happy Coding!
+## 🛠️ Tech Stack
+
+- **HTML5** (Semantic markup)
+- **CSS3** (Flexbox, custom properties/variables)
+- **JavaScript (ES6)** (Array methods, DOM manipulation)
+
+## 📸 Preview
+
+_Main Screen:_
+![App Preview](./images/prev.jpg)
+
+## 📦 How to Run
+
+1. Clone the repository:
+   ```bash
+   git clone [https://github.com/your-username/js-sea-burgers.git](https://github.com/your-username/js-sea-burgers.git)
+   ```
