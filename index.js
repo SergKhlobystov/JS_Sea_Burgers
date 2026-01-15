@@ -25,7 +25,7 @@ const menuHtml = menuArray.map(item => {
     `
 }).join('');
 
-// 3. Вставляємо на сторінку
+
 menuContainer.innerHTML = menuHtml;
 
 
@@ -34,29 +34,38 @@ document.addEventListener('click', function (e) {
 
     if (button) {
         const id = Number(button.dataset.id)
-        console.log(id)
+        const item = menuArray.find(item => item.id === id)
+        order.push(item)
+        renderOrder()
     }
 })
 
+let order = []
 
   
-// const orderHTML = order.map(item => {
-    
-//     if (order.length > 0) {
-//     document.getElementById('order-container').classList.remove('hidden')
-// }
-//     return `
-//     <section class="container hidden">
-//   <h2>Your order</h2>
-//   <div class="order_element">
-    
-//   </div>
-//   <hr />
-//   <div class="total_price">
-//     <h2>Total price:</h2>
-//     <p id="total_price_pay"></p>
-//   </div>
-//   <button class="complete_order" id="complete_order">Complete order</button>
-// </section>
-//     `
-// })
+function renderOrder() {
+    console.log('renderOrder called', order.length)
+    const orderContainer = document.getElementById('order-container')
+    const orderItems = document.getElementById('order-items')
+
+    console.log(order)
+
+    console.log(orderContainer)
+
+
+    if (order.length > 0) {
+        orderContainer.classList.remove('hidden')
+    } else {
+        orderContainer.classList.add('hidden')
+        return
+    }
+
+    orderItems.innerHTML = order.map(item => {
+        return `
+            <div class="order_element">
+                <p>${item.name}</p>
+                <p>$${item.price}</p>
+            </div>
+        `
+    }).join('')
+}
