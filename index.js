@@ -16,7 +16,7 @@ const menuHtml = menuArray.map(item => {
                 <h4 class="product_price">$${item.price}</h4>
             </div>
             
-            <button class="add_button">
+            <button data-id="${item.id}" class="add_button">
                 <img src="images/plus.png" alt="add to cart">
             </button>
         </div>
@@ -27,3 +27,36 @@ const menuHtml = menuArray.map(item => {
 
 // 3. Вставляємо на сторінку
 menuContainer.innerHTML = menuHtml;
+
+
+document.addEventListener('click', function (e) {
+    const button = e.target.closest('.add_button')
+
+    if (button) {
+        const id = Number(button.dataset.id)
+        console.log(id)
+    }
+})
+
+
+  
+// const orderHTML = order.map(item => {
+    
+//     if (order.length > 0) {
+//     document.getElementById('order-container').classList.remove('hidden')
+// }
+//     return `
+//     <section class="container hidden">
+//   <h2>Your order</h2>
+//   <div class="order_element">
+    
+//   </div>
+//   <hr />
+//   <div class="total_price">
+//     <h2>Total price:</h2>
+//     <p id="total_price_pay"></p>
+//   </div>
+//   <button class="complete_order" id="complete_order">Complete order</button>
+// </section>
+//     `
+// })
