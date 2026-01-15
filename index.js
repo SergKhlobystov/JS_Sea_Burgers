@@ -30,15 +30,43 @@ menuContainer.innerHTML = menuHtml;
 
 
 document.addEventListener('click', function (e) {
-    const button = e.target.closest('.add_button')
 
-    if (button) {
-        const id = Number(button.dataset.id)
+    const addBtn = e.target.closest('.add_button')
+    if (addBtn) {
+        const id = Number(addBtn.dataset.id)
         const item = menuArray.find(item => item.id === id)
-        order.push(item)
+
+        const existingItem = order.find(orderItem => orderItem.id === item.id)
+
+        if (existingItem) {
+            existingItem.qty += 1
+        } else {
+            order.push({ ...item, qty: 1 })
+        }
+
         renderOrder()
     }
+
+    const removeBtn = e.target.closest('.remove-btn')
+        if (removeBtn) {
+            const id = Number(removeBtn.dataset.id)
+            const item = order.find(orderItem => orderItem.id === id)
+
+            if (item) {
+                item.qty -= 1
+            }
+
+            if (item.qty === 0) {
+                order = order.filter(orderItem => orderItem.id !== id)
+            }
+
+            renderOrder()
+}
+
+
 })
+
+
 
 let order = []
 
@@ -52,6 +80,11 @@ function renderOrder() {
 
     console.log(orderContainer)
 
+    const total_price = document.getElementById('total_price_pay')
+    total_price.innerHTML = `$${order.reduce((sum, item) => sum + item.price * item.qty, 0)}`
+    total_price.classList.add('product_price')
+    total_price.classList.add('strong_bold')
+
 
     if (order.length > 0) {
         orderContainer.classList.remove('hidden')
@@ -63,9 +96,11 @@ function renderOrder() {
     orderItems.innerHTML = order.map(item => {
         return `
             <div class="order_element">
-                <p>${item.name}</p>
-                <p>$${item.price}</p>
+                <p class="product_name" >${item.name} <span class="product_ingredients" >x${item.qty}</span><button class="remove-btn" data-id="${item.id}">remove</button></p>
+                <p class="product_price" >$${item.price * item.qty}</p>
             </div>
         `
     }).join('')
+
+    console.log(order)
 }

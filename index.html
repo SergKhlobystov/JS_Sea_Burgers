@@ -28,20 +28,20 @@
 
     <main>
       <section class="container" id="menu-container"></section>
-      <section class="container" id="order-container"></section>
+      <section class="container hidden" id="order-container">
+        <h2 id="order_header">Your order</h2>
+        <div class="order-items" id="order-items"></div>
+        <hr />
+        <div class="total_price" id="total_price">
+          <p class="total-price">Total price:</p>
+          <p id="total_price_pay"></p>
+        </div>
+        <button class="complete_order" id="complete_order">
+          Complete order
+        </button>
+      </section>
     </main>
 
     <script src="index.js" type="module"></script>
   </body>
 </html>
-
-<section class="container hidden" id="order-container">
-  <h2>Your order</h2>
-  <div id="order-items"></div>
-  <hr />
-  <div class="total_price" id="total_price">
-    <h2>Total price:</h2>
-    <p id="total_price_pay"></p>
-  </div>
-  <button class="complete_order" id="complete_order">Complete order</button>
-</section>
