@@ -36,7 +36,7 @@ Just **HTML, CSS, and vanilla JavaScript**.
 
 ├── index.html
 ├── index.css
-├── index.js
+├── index.j
 ├── data.js
 └── images/
 
