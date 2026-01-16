@@ -40,6 +40,24 @@
           Complete order
         </button>
       </section>
+      <form class="checkout-window hidden" id="checkout-window">
+        <h2 class="checkout-text">Enter card details</h2>
+        <input type="text" placeholder="Enter your name" required />
+        <input
+          type="text"
+          inputmode="numeric"
+          placeholder="Enter card number"
+          maxlength="16"
+        />
+        <input
+          type="password"
+          inputmode="numeric"
+          placeholder="Enter CVV"
+          maxlength="3"
+        />
+
+        <button class="pay_button" id="pay_button">Pay</button>
+      </form>
     </main>
 
     <script src="index.js" type="module"></script>
