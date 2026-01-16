@@ -212,6 +212,24 @@ h2,
   z-index: 1000;
 }
 
+.thanks-window {
+  text-align: center;
+  display: flex;
+  margin: 32px auto 0 auto;
+  justify-content: center;
+  align-items: center;
+  border-radius: 3px;
+  width: 504px;
+  height: 120px;
+  background: #ecfdf5;
+  font-family: var(--font-family);
+  font-weight: 400;
+  font-size: 32px;
+  line-height: 100%;
+  color: #065f46;
+  border-radius: 6px;
+}
+
 hr {
   border: none;
   border-bottom: 1px solid;

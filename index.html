@@ -42,7 +42,13 @@
       </section>
       <form class="checkout-window hidden" id="checkout-window">
         <h2 class="checkout-text">Enter card details</h2>
-        <input type="text" placeholder="Enter your name" required />
+        <input
+          type="text"
+          placeholder="Enter your name"
+          id="name_input"
+          required
+        />
+
         <input
           type="text"
           inputmode="numeric"
@@ -58,6 +64,7 @@
 
         <button class="pay_button" id="pay_button">Pay</button>
       </form>
+      <form class="thanks_message" id="thanks_message"></form>
     </main>
 
     <script src="index.js" type="module"></script>

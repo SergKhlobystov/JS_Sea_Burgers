@@ -70,6 +70,27 @@ document.addEventListener('click', function (e) {
 
 let order = []
 
+const completeOrderBtn = document.getElementById('complete_order')
+const checkoutWindow = document.getElementById('checkout-window')
+const payBtn = document.getElementById('pay_button')
+const nameInput = document.getElementById('name_input')
+
+completeOrderBtn.addEventListener('click', function () {
+    checkoutWindow.classList.remove('hidden')
+})
+
+document.addEventListener('click', function (e) {
+  // якщо форма ВІДКРИТА
+  if (!checkoutWindow.classList.contains('hidden')) {
+    // і якщо клік НЕ всередині форми
+    if (!checkoutWindow.contains(e.target) &&
+        !e.target.closest('#complete_order')) {
+      checkoutWindow.classList.add('hidden')
+    }
+  }
+})
+
+
   
 function renderOrder() {
     console.log('renderOrder called', order.length)
@@ -104,3 +125,25 @@ function renderOrder() {
 
     console.log(order)
 }
+
+const thanksMessage = document.getElementById('thanks_message')
+
+payBtn.addEventListener('click', function (e) {
+  e.preventDefault()
+
+  const customerName = nameInput.value
+  if (!customerName) return
+
+  // 1. Ховаємо форму
+  checkoutWindow.classList.add('hidden')
+
+  // 2. Ховаємо order
+  order = []
+  renderOrder()
+
+  // 3. Робимо іменну подяку
+  thanksMessage.innerHTML = `<div class="thanks-window" ><p>Thanks, ${customerName}! Your order is on its way!</p></div>`
+
+  })
+
+
